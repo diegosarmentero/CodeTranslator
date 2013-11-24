@@ -10,7 +10,10 @@ DEPENDENCIES
 - pip install astor
 
 
-usage: code_translator.py [-h] [-p Project to PO] [-t Translate Project]
+USAGE
+=====
+
+code_translator.py [-h] [-p Project to PO] [-t Translate Project]
                           [-o Output Folder]
 
 $code_translator -p project_path [-o output_path] [-t project_path]
