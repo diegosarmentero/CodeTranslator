@@ -21,8 +21,8 @@ from __future__ import absolute_import
 import argparse
 
 
-usage = ("$documentor -p project_path -o output_path "
-         "[--projectname name, --email address]")
+usage = ("$code_translator -p project_path [-o output_path] "
+         "[-t project_path]")
 
 epilog = ("This program comes with ABSOLUTELY NO WARRANTY."
           "This is free software, and you are welcome to redistribute "
