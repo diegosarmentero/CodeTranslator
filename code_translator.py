@@ -26,6 +26,7 @@ def execute_translator():
     """Run the commands selected by the user with CodeTranslator."""
     project_to_po, project_to_translate, output = arguments.parse()
     output = os.path.abspath(output)
+
     if project_to_po:
         project_to_po = os.path.abspath(project_to_po)
         filename = code_parser.create_po(project_to_po)
@@ -36,6 +37,8 @@ def execute_translator():
         code_parser.translate_source(project_to_translate, output)
         print("TRANSLATION GENERATED AT: %s" % output)
 
+    if not project_to_po and not project_to_translate:
+        print("No arguments given, please run with -h argument")
 
 if __name__ == '__main__':
     execute_translator()
