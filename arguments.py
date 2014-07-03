@@ -33,26 +33,27 @@ def parse():
     """Parse the arguments received from the command line."""
     global usage
     global epilog
-    project_to_po = None
-    project_to_translate = None
+    project = None
+    #project_to_translate = None
     output = None
 
     try:
         parser = argparse.ArgumentParser(description=usage, epilog=epilog)
 
-        parser.add_argument('-p', '--po', metavar='Project to PO', type=str,
+        parser.add_argument('-p', '--project', metavar='Project to PO',
+            type=str,
             help='Read the source code of this project and generate po files',
             default=None)
-        parser.add_argument('-t', '--translate', metavar='Translate Project',
-            type=str, help='Source code to translate', default=None)
+        #parser.add_argument('-t', '--translate', metavar='Translate Project',
+            #type=str, help='Source code to translate', default=None)
         parser.add_argument('-o', '--output', metavar='Output Folder', type=str,
             help='Place to locate the outpur result', default=".")
 
         opts = parser.parse_args()
-        project_to_po = opts.po
-        project_to_translate = opts.translate
+        project = opts.project
+        #project_to_translate = opts.translate
         output = opts.output
     except Exception as reason:
         print("Args couldn't be parsed.")
         print(reason)
-    return (project_to_po, project_to_translate, output)
+    return (project, output)
